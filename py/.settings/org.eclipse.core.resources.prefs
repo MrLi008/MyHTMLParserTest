@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/test/aggregate.py=utf-8
 encoding//src/test/excepttest.py=utf-8
 encoding//src/test/getmessage/__init__.py=utf-8
 encoding//src/test/getmessage/geturlmessage.py=utf-8
