@@ -1,0 +1,1 @@
+method: get|action: http://fun.51fanli.com/client/search/gourl/|url: http://9.fanli.com/?go_url=&is_durl=0&keyword=

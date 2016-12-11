@@ -1,0 +1,8 @@
+method: |action: |url: https://www.douyu.com/
+method: |action: |url: https://www.douyu.com/
+method: |action: |url: https://www.douyu.com/
+https://www.douyu.com/
+https://www.douyu.com//cms/about/about_us.html
+https://www.douyu.com//cms/about/jobs.html
+https://www.douyu.com//cms/about/cooperate.html
+https://www.douyu.com//cms/about/contact.html
