@@ -51,7 +51,7 @@ test.getmessage.spider_simulate.HTMLParserSimulateAndroid
                         # 我决定要改成: {'attrname':'attrvalue','attrname1':attrvalue'}
                         : 添加一个转换函数 changetodictof(attrs) return dict{}
                         # 由于用户输入若设为字典类型, HTMLParser也需要转换attrs为字典,
-                        # 不如设用户输入与attrs为同一类型.
+                        # 不如设用户输入与attrs为同一类型. 另建类aggregate实现集合的交并补
             : handle_endtag(self, tag)
             : handle_data(self, data)
             
@@ -63,7 +63,11 @@ test.getmessage.spider_simulate.HTMLParserSimulateAndroid
             1.1, 以该标签开始, 以该标签结束, 收集这之间的所有数据
                 1.1.1, 标签的属性
                     : 是否有某个属性
-                    : 
+                    : if tags.has_key(tag):
+                    :    userattrs = tags.get(tag)
+                    :    # 若userattrs对于attrs的补集为空, 说明该标签符合查找条件
+                    :    if aggregate(userattrs, attrs).complement_a_b() == []:
+                    :        # 找到符合条件的标签
                 1.1.2, 标签的属性的值
                     : 
                     : if tags.has_key(tag):

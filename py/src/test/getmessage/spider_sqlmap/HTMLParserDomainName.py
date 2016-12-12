@@ -424,7 +424,8 @@ if __name__ == '__main__':
 
 #     url = 'http://www.51sjyx.com/'
 #     url = 'http://hebei.mrli.com/'
-    url = 'http://emlog.mrli.com/'
+#     url = 'http://emlog.mrli.com/'
+    url = 'http://www.dhcc.com.cn/'
     
     d = MyRequests(url, url)
     
