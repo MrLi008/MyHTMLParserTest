@@ -141,7 +141,9 @@ if __name__ == '__main__':
         val.add(v)
     print val
     
-    
+    print '列表的01测试'
+    list3=[1]
+    print list3[-1]
     
     
     

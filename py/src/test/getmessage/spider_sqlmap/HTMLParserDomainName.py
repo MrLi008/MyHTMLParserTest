@@ -46,6 +46,7 @@ from HTMLParser import HTMLParser
 # 协议头
 headofprotocol = ('http:', 'https:')
 webpagetype = ('html', 'jsp', 'asp', 'php', 'aspx', 'com')
+notwebpagetype = ('gif', 'js', 'css', 'png', '')
 links = set()
 formdata = dict()
 
@@ -92,6 +93,7 @@ class HTMLParserDomainName(HTMLParser):
 #                     print '请求', link[1]
                     mythreadrequests = MyRequestsThread(link[1], self.source_url)
                     mythreadrequests.start()
+                    pass
                     
         elif tag == 'form' and attrs:
 #             print 'form......'
@@ -163,6 +165,9 @@ class HTMLParserDomainName(HTMLParser):
 #                 fullurl = hrefs[0] + '//' + domain + '/' + hrefs[2:]
                 fullurl = nexthref
             else:
+                if hrefs[2].split('.')[1:] == domain.split('.')[1:]:
+                    fullurl = nexthref
+                    flag = True
                 flag = False
             
         # 若连接不包含协议头
@@ -176,15 +181,22 @@ class HTMLParserDomainName(HTMLParser):
         # 排除js, gif, pag, 等页面
         # 若连接未指向网页
         # 获取页面的类型
-        if nexthref.split('?')[0].split('.')[-1] not in webpagetype:
-            flag = False
+#         urlpath = nexthref.split('?')[0].split('/')[-1]
+#         print 'urlpath: ', urlpath
+#         # 若该链接以'/'结尾
+#         if urlpath == '':
+#             flag = True
+#         if urlpath.split('.')[-1] not in webpagetype:
+#             flag = False
             
 #         if type(fullurl) == type(list()):
 #             tempfull = fullurl
 #             fullurl = ''
 #             for t in tempfull:
 #                 fullurl = fullurl + t
-            
+        # 排除后缀为 .js, .css, .png, .jpg, .gif的链接
+        
+#         print 'fullurl: ', fullurl
         return (flag, fullurl)
     
     
@@ -425,7 +437,8 @@ if __name__ == '__main__':
 #     url = 'http://www.51sjyx.com/'
 #     url = 'http://hebei.mrli.com/'
 #     url = 'http://emlog.mrli.com/'
-    url = 'http://www.dhcc.com.cn/'
+#     url = 'http://www.dhcc.com.cn/'
+    url = 'http://www.zhaopin.com/'
     
     d = MyRequests(url, url)
     
