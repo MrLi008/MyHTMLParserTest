@@ -9,9 +9,9 @@ test.flasktest.showinbrowser.showinbrowser
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/<usr>')
-def h(usr):
-    return 'Hi, %s' % usr
+@app.route('/')
+def h():
+    return 'Hi, %s'
 
 if __name__ == '__main__':
     app.run()
