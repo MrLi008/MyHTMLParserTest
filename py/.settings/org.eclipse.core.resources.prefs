@@ -9,6 +9,7 @@ encoding//src/test/getmessage/httphandle.py=utf-8
 encoding//src/test/getmessage/locatbyip.py=utf-8
 encoding//src/test/getmessage/spider_simulate/HTMLParserSimulateAndroid.py=utf-8
 encoding//src/test/getmessage/spider_simulate/HTMLParserSimulateBrowser.py=utf-8
+encoding//src/test/getmessage/spider_simulate/yizhouanquangongtai.py=utf-8
 encoding//src/test/getmessage/spider_sqlmap/HTMLParserDomainName.py=utf-8
 encoding//src/test/getmessage/spider_sqlmap/www.ihs.ac.cn.txt=gb2312
 encoding//src/test/getmessage/spiderforbook/HTMLParserDownloadNovel.py=utf-8
