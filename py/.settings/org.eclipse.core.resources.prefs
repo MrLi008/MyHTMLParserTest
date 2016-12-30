@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/dataprepare/test_numpy/simple.py=utf-8
 encoding//src/test/aggregate.py=utf-8
 encoding//src/test/excepttest.py=utf-8
 encoding//src/test/flasktest/showinbrowser/request2.py=utf-8

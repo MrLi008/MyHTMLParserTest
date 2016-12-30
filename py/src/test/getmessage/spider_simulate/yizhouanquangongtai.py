@@ -4,7 +4,7 @@ Created on 2016年12月24日
 
 @author: hasee
 
-这个其实是在爬安恒的站, 上边有一些安全报告
+这个其实是在爬安恒的站, 上边的一些安全报告
 test.getmessage.spider_simulate.yizhouanquangongtai
 '''
 
