@@ -8,7 +8,6 @@ example: www.baidu.com
 调用sqlmap, 
 给邮箱发信息
 '''
+import os
+os.path.join('F:\\software\\safetools\\Windows7tools\\SmallTools\\sqlmap-master')
 
-
-# 
-from sqlmapsource import sqlmapapi

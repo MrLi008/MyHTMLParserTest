@@ -10,6 +10,7 @@ dataprepare.test_numpy.simple
 
 import numpy as np
 from numpy import matlib
+from collections import Iterable
 # print np
 # 
 # 
@@ -135,3 +136,83 @@ print arr
 for i in range(3):
     arr[i%2, i, 2-i] = 1
 print arr
+'''
+# 生成多维数据
+# 生成规则:
+:input integer n,example n=2
+:output  ndarray data_source,example [[0,1],[10,11]] 
+'''
+def create_data_of_dimen(n):
+    
+    data_source = list()
+    for i in range(n):
+        data_source.append(n)
+    print data_source
+    print 'prepare.....',n,
+    d = np.zeros(data_source, dtype=np.int64)
+#     print '多维数据\n', d
+#     print '遍历:'
+    d = show_list(d, n, 0)
+    print 'ok'
+    return d
+def show_list(l, deep, value ):
+    if not isinstance(l,Iterable):
+#         print l, deep, value
+        return value
+    else :
+        num_col=0
+        for v in l:
+#             print v, deep, value
+
+            l[num_col] = show_list(v, deep-1, value*10+num_col)
+            num_col += 1
+        return l
+# 被查询维数为n维, 索引为n-1维
+d = create_data_of_dimen(4)
+print d
+# data_source = np.array()
+# data_index = np.array([[1],[1]])
+data_source = create_data_of_dimen(4)
+# data_index = np.ones((7,2))
+data_index = np.array([1])
+print 'index: \n', data_index.astype(dtype=np.bool)
+print 'source: \n', data_source
+print 'result: \n',data_source[data_index.astype(dtype=np.int64)]
+
+arr = np.arange(20).reshape((2,10))
+print arr.T
+
+print np.dot(arr,arr.T)
+
+
+arr = create_data_of_dimen(3)
+print arr
+print arr.T
+print arr.swapaxes(1,1,)
+
+# ufunc:
+# sqrt, add, maximum, ...
+print np.sqrt(arr.astype(dtype=np.double))
+
+points = np.arange(-1,1,0.1)
+print points
+xs, ys = np.meshgrid(points, points)
+print xs,'\n',ys
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
